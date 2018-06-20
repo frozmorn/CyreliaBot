@@ -71,7 +71,7 @@ client.on("message", async message => {
     }
     if (command === "leave") {
        if (message.member.voiceChannel) {
-      const connection = await message.member.voiceChannel.join();
+      const connection = await message.member.voiceChannel.leave();
      }
     }
     if (command === "kick") {
