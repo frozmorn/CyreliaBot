@@ -16,18 +16,9 @@ client.on("guildDelete", guild => {
     console.log(`I have been removed from: ${guild.name} (id: ${guild.id})`);
     client.user.setActivity(`Serving ${client.guilds.size} servers`);
 }); 
-client.on("message", async message => {
-    if (message.author.bot) return;
-    const msg = args.shift().toLowerCase();
-    if (msg === "ayy") {
-        message.channel.send("Ayy, lmao!");
-    }
-    if (msg === "wat") {
-        message.channel.send("Say what?");
-    }
-    if (msg === "halo") {
-        message.channel.send("Hai " + message.author.toString() + "!");
-    }
+client.on("message", (message) => {
+    if (message.content === "/join") {
+        message.channel.send("gomen, master belum menyelesaikan codinganya...");
      if (message.isMentioned(client.user)) {
         message.reply('Ya?');
     }   
