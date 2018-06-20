@@ -40,7 +40,8 @@ client.on("message", (message) => {
     } 
      if (message.isMentioned(client.user)) {
         message.reply('Ya?');
-    }
+    }   
+    
 });
 client.on("message", async message => {
     if (message.author.bot) return;
@@ -59,7 +60,20 @@ client.on("message", async message => {
         // And we get the bot to say the thing: 
         message.channel.send(sayMessage);
     }
-
+     if (command === "join") {
+    // Only try to join the sender's voice channel if they are in one themselves
+     if (message.member.voiceChannel) {
+      const connection = await message.member.voiceChannel.join();
+     }
+         else {
+      message.reply('You need to join a voice channel first!');
+    }
+    }
+    if (command === "leave") {
+       if (message.member.voiceChannel) {
+      const connection = await message.member.voiceChannel.join();
+     }
+    }
     if (command === "kick") {
         if (!message.member.roles.some(r => ["Admin", "God Weabs"].includes(r.name)))
             return message.reply("Sorry, you don't have permissions to use this!");
