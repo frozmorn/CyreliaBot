@@ -38,6 +38,9 @@ client.on("message", (message) => {
     if (message.content === "OwO") {
         message.channel.send("What's this?");
     } 
+     if (message.isMentioned(client.user)) {
+        message.reply('Ya?');
+    }
 });
 client.on("message", async message => {
     if (message.author.bot) return;
@@ -47,7 +50,7 @@ client.on("message", async message => {
 
     if (command === "ping") {
         const m = await message.channel.send("Ping?");
-        m.edit(`Pong! Latency is ${m.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(client.ping)}ms`);
+        m.edit(`Pong! I'm much faster than my sister :> ${Math.round(client.ping)}ms`);
     }
     if (command === "say") {
         const sayMessage = args.join(" ");
