@@ -17,27 +17,16 @@ client.on("guildDelete", guild => {
     client.user.setActivity(`Serving ${client.guilds.size} servers`);
 }); 
 client.on("message", (message) => {
-    if (message.toLowerCase === "ayy") {
+    const msg = args.shift().toLowerCase();
+    if (msg === "ayy") {
         message.channel.send("Ayy, lmao!");
     }
-    if (message.content === "wat") {
+    if (msg === "wat") {
         message.channel.send("Say what?");
     }
-    if (message.content === "halo") {
+    if (msg === "halo") {
         message.channel.send("Hai " + message.author.toString() + "!");
     }
-    if (message.content === "lol") {
-        message.channel.send("AWOKWAOKWAKOWAKWOKA");
-    } 
-    if (message.content === "hmmm") {
-        message.channel.send("https://cdn.discordapp.com/attachments/257828947272663041/372201791728648213/yoy587pe6pmz.gif");
-    }
-    if (message.content === "owo") {
-        message.channel.send("What's this?");
-    } 
-    if (message.content === "OwO") {
-        message.channel.send("What's this?");
-    } 
      if (message.isMentioned(client.user)) {
         message.reply('Ya?');
     }   
