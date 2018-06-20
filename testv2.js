@@ -16,7 +16,8 @@ client.on("guildDelete", guild => {
     console.log(`I have been removed from: ${guild.name} (id: ${guild.id})`);
     client.user.setActivity(`Serving ${client.guilds.size} servers`);
 }); 
-client.on("message", (message) => {
+client.on("message", async message => {
+    if (message.author.bot) return;
     const msg = args.shift().toLowerCase();
     if (msg === "ayy") {
         message.channel.send("Ayy, lmao!");
