@@ -17,8 +17,6 @@ client.on("guildDelete", guild => {
     client.user.setActivity(`Serving ${client.guilds.size} servers`);
 }); 
 client.on("message", (message) => {
-    if (message.content === "/join") {
-        message.channel.send("gomen, master belum menyelesaikan codinganya...");
      if (message.isMentioned(client.user)) {
         message.reply('Ya?');
     }   
@@ -43,12 +41,7 @@ client.on("message", async message => {
     }
      if (command === "join") {
     // Only try to join the sender's voice channel if they are in one themselves
-     if (message.member.voiceChannel) {
-      const connection = await message.member.voiceChannel.join();
-     }
-         else {
-      message.reply('You need to join a voice channel first!');
-    }
+        message.channel.send("gomen, master belum menyelesaikan codinganya...");
     }
     if (command === "leave") {
        if (message.member.voiceChannel) {
