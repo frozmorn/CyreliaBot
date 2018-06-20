@@ -17,7 +17,7 @@ client.on("guildDelete", guild => {
     client.user.setActivity(`Serving ${client.guilds.size} servers`);
 }); 
 client.on("message", (message) => {
-    if (message.content === "ayy".toLowerCase()) {
+    if (message.content === "ayy" +.toLowerCase()) {
         message.channel.send("Ayy, lmao!");
     }
     if (message.content === "wat") {
