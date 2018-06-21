@@ -11,9 +11,12 @@ client.on("message", (message) => {
     if (message.content === "bobo") {
         message.channel.send("https://imgur.com/a/XeCfWPi");
     }
+    if (message.content === "pedo") {
+        message.channel.send("https://imgur.com/a/pOuFhoU");
+    }
      if (message.isMentioned(client.user)) {
         message.reply('Ya?');
-    }   
+    } 
     
 });
 client.on("message", async message => {
