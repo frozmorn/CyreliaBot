@@ -9,7 +9,7 @@ client.on("ready", () => {
 
 client.on("message", (message) => {
     if (message.content === "bobo") {
-        message.channel.send("message.author.toString()" + "https://imgur.com/a/XeCfWPi " + "!");
+        message.channel.send(message.author.toString() + "https://imgur.com/a/XeCfWPi " + "!");
     }
      if (message.isMentioned(client.user)) {
         message.reply('Ya?');
