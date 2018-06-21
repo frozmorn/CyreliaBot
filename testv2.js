@@ -8,6 +8,9 @@ client.on("ready", () => {
 });
 
 client.on("message", (message) => {
+    if (message.content === "bobo") {
+        message.channel.send("message.author.toString() https://imgur.com/a/XeCfWPi " + "!");
+    }
      if (message.isMentioned(client.user)) {
         message.reply('Ya?');
     }   
@@ -18,7 +21,6 @@ client.on("message", async message => {
     if (message.content.indexOf(config.prefix) !== 0) return;
     const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
     const command = args.shift().toLowerCase();
-
     if (command === "ping") {
         const m = await message.channel.send("Ping?");
         m.edit(`Pong! I'm much faster than my sister :> ${Math.round(client.ping)}ms`);
