@@ -37,13 +37,12 @@ client.on("message", async message => {
     }
      if (command === "join") {
     // Only try to join the sender's voice channel if they are in one themselves
-        message.channel.send("gomen, master belum menyelesaikan codinganya...");
+    if (message.member.voiceChannel) {
+      const connection = await message.member.voiceChannel.join();
+    } else {
+      message.reply('You need to join a voice channel first!');
     }
-    if (command === "leave") {
-       if (message.member.voiceChannel) {
-      const connection = await message.member.voiceChannel.leave();
-     }
-    }
+  }
     if (command === "kick") {
         if (!message.member.roles.some(r => ["Admin", "God Weabs"].includes(r.name)))
             return message.reply("Sorry, you don't have permissions to use this!");
