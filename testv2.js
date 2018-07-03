@@ -78,6 +78,9 @@ client.on("message", async message => {
             .catch(error => message.reply(`Sorry ${message.author} I couldn't ban because of : ${error}`));
         message.reply(`${member.user.tag} has been banned by ${message.author.tag} because: ${reason}`);
     }
+    if (command === "quotes") {
+        message.channel.send("https://imgur.com/a/TU6l1Hw");
+    }
 
     if (command === "purge") {
         // This command removes all messages from all users in the channel, up to 100.
