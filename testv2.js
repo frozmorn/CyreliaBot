@@ -8,15 +8,22 @@ client.on("ready", () => {
 });
 
 client.on("message", (message) => {
-    if (message.content === "bobo") {
-        message.channel.send("https://imgur.com/a/XeCfWPi");
-    }
+    
     if (message.content === "fes") {
+        message.channel.send("Po");
+    }
+     if (message.content === "Fes") {
         message.channel.send("Po");
     }
      if (message.isMentioned(client.user)) {
         message.reply('Po');
     } 
+     if (message.content === "fesa") {
+        message.channel.send("Po");
+    }
+     if (message.content === "Fes") {
+        message.channel.send("Po");
+    }
     
 });
 client.on("message", async message => {
