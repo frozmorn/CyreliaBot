@@ -21,9 +21,6 @@ client.on("message", (message) => {
      if (message.content === "fesa") {
         message.channel.send("Po");
     }
-     if (message.content === "Fes") {
-        message.channel.send("Po");
-    }
     
 });
 client.on("message", async message => {
